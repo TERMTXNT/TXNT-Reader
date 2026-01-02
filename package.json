@@ -1,0 +1,50 @@
+{
+  "name": "txnt-reader",
+  "version": "1.0.0",
+  "description": "TXNT Reader - EPUB reader with Japanese, Spanish, and Malayalam to English translation",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder",
+    "build-win": "electron-builder --win",
+    "dist": "npm run build"
+  },
+  "keywords": [
+    "epub",
+    "reader",
+    "translator",
+    "japanese",
+    "spanish",
+    "malayalam"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0",
+    "electron-packager": "^17.1.2"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "node-fetch": "^3.3.2",
+    "xml2js": "^0.6.2"
+  },
+  "build": {
+    "appId": "com.txnt.reader",
+    "productName": "TXNT Reader",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "!node_modules/.cache/**/*"
+    ],
+    "win": {
+      "target": "dir"
+    },
+    "nsis": false,
+    "compression": "store"
+  }
+}
